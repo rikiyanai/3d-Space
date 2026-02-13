@@ -3,8 +3,11 @@ import {
     Vector4,
     Matrix3,
     Matrix4,
-    Quaternion
+    Quaternion,
+    Color
 } from "three";
+
+export { Color };
 
 
 /**
