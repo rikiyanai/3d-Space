@@ -4,7 +4,8 @@ const path = require('path');
 module.exports = {
     resolve: {
         alias: {
-            'stats.js': 'stats.js/Stats.js'
+            'stats': path.resolve(__dirname, '../node_modules/stats.js/build/stats.min.js'),
+            'stats.js': path.resolve(__dirname, '../node_modules/stats.js/build/stats.min.js')
         }
     },
     module: {

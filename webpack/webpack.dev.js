@@ -16,7 +16,7 @@ module.exports = merge(common, {
     },
     resolve: {
         alias: {
-            stats: path.resolve(__dirname, '../node_modules/stats.js/build/stats.min.js')
+            'stats.js': path.resolve(__dirname, '../node_modules/stats.js/build/stats.min.js')
         }
     },
     plugins: [

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thurston - Hyperbolic Example</title>
+    <style>
+        html, body { margin: 0; padding: 0; overflow: hidden; }
+        #info { position: absolute; top: 10px; left: 10px; color: white; background: rgba(0,0,0,0.7); padding: 10px; font-family: monospace; }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./vendor/three.module.js",
+            "three/addons/": "./vendor/",
+            "stats": "./vendor/stats.module.js",
+            "dat.gui": "./vendor/dat.gui.module.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="info">Loading...</div>
+    <script type="module">
+        import * as THREE from 'three';
+        
+        const info = document.getElementById('info');
+        info.textContent = 'Loading Thurston...';
+        
+        try {
+            // Dynamic import of Thurston
+            const thurstonModule = await import('./thurston/thurstonHyp.js');
+            const { ThurstonLite, cubeSet, PointLight, PhongMaterial, LocalBallShape, complement, Solid, phongWrap, Vector, Point, Color } = thurstonModule;
+            
+            // Set up Thurston
+            const thurston = new ThurstonLite(cubeSet, { keyboard: 'us' });
+            
+            // Lights
+            const light0 = new PointLight(new Vector(1, 0, 0), new Color(1, 1, 1));
+            const light1 = new PointLight(new Vector(0, 1, -1), new Color(1, 1, 1));
+            const light2 = new PointLight(new Vector(-1, -1, 1), new Color(1, 1, 1));
+            
+            // Material
+            const mat = new PhongMaterial({ color: new Color(0.2, 0.5, 0.9), shininess: 10 });
+            
+            // Ball shape
+            const ball = new LocalBallShape(new Point(0, 0, 0), 0.5, mat);
+            
+            // Add to scene
+            thurston.add(ball, light0, light1, light2);
+            thurston.run();
+            
+            info.textContent = 'Thurston Hyperbolic loaded!';
+            
+        } catch(e) {
+            info.textContent = 'Error: ' + e.message;
+            console.error(e);
+        }
+    </script>
+</body>
+</html>
