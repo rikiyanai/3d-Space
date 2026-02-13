@@ -2,7 +2,11 @@ const path = require('path');
 // TODO: remove comments from glsl.mustache files
 
 module.exports = {
-
+    resolve: {
+        alias: {
+            'stats.js': 'stats.js/Stats.js'
+        }
+    },
     module: {
 
         rules: [

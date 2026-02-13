@@ -14,15 +14,20 @@ module.exports = merge(common, {
         filename: 'dev.js',
         clean: true,
     },
+    resolve: {
+        alias: {
+            stats: path.resolve(__dirname, '../node_modules/stats.js/Stats.js')
+        }
+    },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
             filename: 'index.html',
-            template: './src/dev/index.html',
+            template: './dev/index.html',
         })
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        static: path.join(__dirname, 'dist'),
         port: 9000,
         hot: true,
         open: false,

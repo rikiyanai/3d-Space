@@ -48,6 +48,7 @@
     "ccapture.js-npmfixed": "^1.1.0",
     "dat.gui": "^0.7.7",
     "es-module-shims": "^1.6.1",
+    "stats.js": "^0.16.0",
     "three": "^0.158.0",
     "webxr-polyfill": "^2.0.3"
   },
