@@ -1,5 +1,7 @@
 # Ray-marching in Thurston geometries
 
+![ASCII shader demo](assets/demo.gif)
+
 This project started from the ray marching hyperbolic virtual
 reality [simulation](https://github.com/mtwoodard/hypVR-Ray_m) (for mobile devices) by Henry Segerman and Michael
 Woodard,
