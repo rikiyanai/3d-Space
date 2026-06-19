@@ -1,4 +1,4 @@
-# Ray-marching in Thurston geometries
+# Ray-marching in Thurston geometries with ASCII SHADERS!
 
 ![ASCII shader demo](assets/demo.gif)
 
